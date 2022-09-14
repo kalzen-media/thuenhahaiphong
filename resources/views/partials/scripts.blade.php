@@ -1,0 +1,12 @@
+<script src="{{asset('thuenhahaiphong/assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/form-validator.min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/contact-form-script.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/aos.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/jquery-ui-min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/odometer.min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/fancybox.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/jquery.appear.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/tweenmax.min.js')}}"></script>
+<script src="{{asset('thuenhahaiphong/assets/js/main.js')}}"></script>
