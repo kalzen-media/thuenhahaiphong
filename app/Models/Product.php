@@ -37,6 +37,10 @@ class Product extends Model
     {
         return $this->belongsToMany(Attribute::class)->withTimestamps()->withPivot(['value']);
     }
+    public function location()
+    {
+        return $this->belongsToMany(Location::class)->withTimestamps();
+    }
     public function catalogues()
     {
         return $this->belongsToMany(Catalogue::class)->withTimestamps();

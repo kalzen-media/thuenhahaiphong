@@ -50,7 +50,7 @@ class ProductController extends Controller
     {
         DB::beginTransaction();
         try {
-            $product = Product::create($request->only(['title','description','price','content','status']));
+            $product = Product::create($request->only(['title','description','price','content','status','code']));
             $product->attributes()->sync(collect($request->attribute)->filter(function($item){return $item['value'];}));
             $product->catalogues()->sync($request->category_id);
             $product->tags()->sync(collect(explode(', ',$request->tags))->map(function($item){return Tag::updateOrCreate(['name'=>$item]);})->pluck('id'));

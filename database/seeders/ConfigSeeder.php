@@ -18,5 +18,8 @@ class ConfigSeeder extends Seeder
         Config::create(['name'=>'logo','value'=>'']);
         Config::create(['name'=>'email','value'=>'']);
         Config::create(['name'=>'hotline','value'=>'']);
+        Config::create(['name'=>'facebook','value'=>'']);
+        Config::create(['name'=>'tiktok','value'=>'']);
+        Config::create(['name'=>'youtube','value'=>'']);
     }
 }

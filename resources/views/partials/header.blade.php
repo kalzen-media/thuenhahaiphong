@@ -2,8 +2,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="{{ route('index') }}">
-                        <img class="logo-light" style="max-height: 82px;" src="{{ asset('thuenhahaiphong/assets/img/logo.png')}}" alt="logo">
-                        <img class="logo-dark" style="max-height: 82px;" src="{{ asset('thuenhahaiphong/assets/img/logo.png')}}" alt="logo">
+                        <img class="logo-light" style="max-height: 82px;" src="{{  $shared_config['logo']->value }}" alt="logo">
                     </a>
                     <div class="collapse navbar-collapse main-menu-wrap" id="navbarSupportedContent">
                         <div class="menu-close d-lg-none">

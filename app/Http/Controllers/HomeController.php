@@ -19,11 +19,9 @@ class HomeController extends Controller
     {
         $slides = Slide::orderBy('ordering','asc')->paginate();
         $testimonials = Testimonial::All();
-        $cat1 = Catalogue::find(1);
-        $cat2 = Catalogue::find(2);
-        $cat3 = Catalogue::find(3);
+        $products = Product::latest()->withCount(['images'])->having('images_count','>',0)->active()->take(6)->get();
         $posts = Post::latest()->withCount(['images'])->having('images_count','>',0)->active()->take(6)->get();
-        return view('home.index',['slides'=> $slides, 'posts'=>$posts, 'testimonials' => $testimonials, 'cat1' => $cat1, 'cat2' => $cat2, 'cat3'=>$cat3]);
+        return view('home.index',['slides'=> $slides, 'posts'=>$posts, 'testimonials' => $testimonials, 'products' => $products]);
     }
     public function order()
     {

@@ -68,6 +68,8 @@ Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () 
     Route::resource('message', MessageController::class);
     //Testimonial
     Route::resource('testimonial', TestimonialController::class);
+    //Location
+    Route::resource('location', LocationController::class);
     //Attribute
     Route::resource('attribute', AttributeController::class);
     Route::prefix('post')->name('post.')->group(function () {

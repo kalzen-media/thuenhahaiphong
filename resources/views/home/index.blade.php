@@ -73,25 +73,11 @@
                 <a href="listings-one.html" class="btn style1">Xem tất cả</a>
             </div>
         </div>
-        <ul class="nav nav-tabs property-tablist" role="tablist">
-            <li class="nav-item">
-                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab_1" type="button"
-                    role="tab">Cho thuê nhà phố</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab_2" type="button" role="tab">Cho thuê
-                    văn phòng</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab_3" type="button" role="tab">Cho thuê
-                    căn hộ - nhà riêng</button>
-            </li>
-        </ul>
         <div class="tab-content hw-tab-content">
             <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
                 <div class="row">
-                    @foreach ($cat1->latestProduct->take(9) as $product)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
+                @foreach ($products as $product)
+                    <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="property-card style2">
                             <div class="property-img-slider owl-carousel">
 
@@ -102,7 +88,7 @@
                             </div>
                             <div class="property-info">
                                 <div class="property-status-wrap">
-                                    <span class="property-status">Cho thuê nhà phố</span>
+                                    <span class="property-status">{{$product->category->title}}</span>
                                     <p class="property-price">Giá: {{ number_format($product->price) }}
                                         tr/<span>tháng</span></p>
                                 </div>
@@ -112,105 +98,10 @@
 
                                 <p>{{$product->description}}</p>
                                 <div class="d-flex">
-                                    <p>DTMB: {{ $product->attributes[1]->pivot->value }} m2 - DTSD:
-                                        {{ $product->attributes[0]->pivot->value }} m2</p>
+                                    
                                 </div>
                                 <ul class="property-metainfo list-style">
-                                    @foreach ($product->attributes as $attribute)
-
-                                    @if ($attribute->name =='Số phòng')
-                                    <li><i class="flaticon-double-bed"></i>{{ $attribute->pivot->value }}</li>
-                                    @elseif ($attribute->name =='Số tầng')
-                                    <li><i class="flaticon-bath-tub"></i>{{ $attribute->pivot->value }}</li>
-                                    @endif
-                                    @endforeach
-                                    <li><i class="flaticon-bath-tub"></i>{{ $product->district_id }}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="tab-pane fade" id="tab_2" role="tabpanel">
-                <div class="row">
-                    @foreach ($cat2->latestProduct->take(9) as $product)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="property-card style2">
-                            <div class="property-img-slider owl-carousel">
-                                @foreach ($product->images as $image)
-                                <img style="height: 350px; object-fit:cover;" src="{{ asset($image->url)}}"
-                                    alt="{{ $product->title }}">
-                                @endforeach
-                            </div>
-                            <div class="property-info">
-                                <div class="property-status-wrap">
-                                    <span class="property-status">Cho thuê nhà phố</span>
-                                    <p class="property-price">Giá: {{ number_format($product->price) }}
-                                        tr/<span>tháng</span></p>
-                                </div>
-                                <h3><a
-                                        href="{{ route('product.detail', ['alias' => $product->slug]) }}">{{ $product->title }}</a>
-                                </h3>
-
-                                <p>{{$product->description}}</p>
-                                <div class="d-flex">
-                                    <p>DTMB: {{ $product->attributes[1]->pivot->value }} m2 - DTSD:
-                                        {{ $product->attributes[0]->pivot->value }} m2</p>
-                                </div>
-                                <ul class="property-metainfo list-style">
-                                    @foreach ($product->attributes as $attribute)
-
-                                    @if ($attribute->name =='sophong')
-                                    <li><i class="flaticon-double-bed"></i>{{ $attribute->pivot->value }}</li>
-                                    @elseif ($attribute->name =='sotang')
-                                    <li><i class="flaticon-bath-tub"></i>{{ $attribute->pivot->value }}</li>
-                                    @endif
-                                    @endforeach
-                                    <li><i class="flaticon-bath-tub"></i>{{ $product->district_id }}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="tab-pane fade" id="tab_3" role="tabpanel">
-                <div class="row">
-                    @foreach ($cat3->latestProduct->take(9) as $product)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="property-card style2">
-                            <div class="property-img-slider owl-carousel">
-                                @foreach ($product->images as $image)
-                                <img style="height: 350px; object-fit:cover;" src="{{ asset($image->url)}}"
-                                    alt="{{ $product->title }}">
-                                @endforeach
-                            </div>
-                            <div class="property-info">
-                                <div class="property-status-wrap">
-                                    <span class="property-status">Cho thuê nhà phố</span>
-                                    <p class="property-price">Giá: {{ number_format($product->price) }}
-                                        tr/<span>tháng</span></p>
-                                </div>
-                                <h3><a
-                                        href="{{ route('product.detail', ['alias' => $product->slug]) }}">{{ $product->title }}</a>
-                                </h3>
-
-                                <p>{{$product->description}}</p>
-                                <div class="d-flex">
-                                    <p>DTMB: {{ $product->attributes[1]->pivot->value }} m2 - DTSD:
-                                        {{ $product->attributes[0]->pivot->value }} m2</p>
-                                </div>
-                                <ul class="property-metainfo list-style">
-                                    @foreach ($product->attributes as $attribute)
-
-                                    @if ($attribute->name =='sophong')
-                                    <li><i class="flaticon-double-bed"></i>{{ $attribute->pivot->value }}</li>
-                                    @elseif ($attribute->name =='sotang')
-                                    <li><i class="flaticon-bath-tub"></i>{{ $attribute->pivot->value }}</li>
-                                    @endif
-                                    @endforeach
-                                    <li><i class="flaticon-bath-tub"></i>{{ $product->district_id }}</li>
+                                    
                                 </ul>
                             </div>
                         </div>

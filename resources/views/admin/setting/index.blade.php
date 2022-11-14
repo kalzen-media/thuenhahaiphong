@@ -51,48 +51,8 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label class="font-weight-semibold">Tiêu đề khối giới thiệu </label>
-                    @if(old('about_title'))
-                    <input class="form-control" id="about_title" name="about_title" value="{{ old('about_title') }}">
-                    @elseif(isset($config['hotline']))
-                    <input class="form-control" id="about_title" name="about_title" value="{{ $config['about_title']->value }}">
-                    @else
-                    <input class="form-control" id="about_title" name="about_title" value="">
-                    @endif
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-semibold">Nội dung khối giới thiệu </label>
-                    @if(old('about_content'))
-                    <textarea class="ckeditor form-control" id="about_content" name="about_content"> {{ old('about_content') }}</textarea>
-                    @elseif(isset($config['hotline']))
-                    <textarea class="ckeditor form-control" id="about_content" name="about_content"> {{ $config['about_content']->value }}</textarea>
-                    @else
-                    <input class="form-control" id="about_content" name="about_content" value="">
-                    @endif
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-semibold">Link ảnh khối giới thiệu</label>
-                    <input type="text" class="form-control" id="about_image" name="about_image" value="{{ old('about_image')?? $config['about_image']->value }}">
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-semibold">Link video khối giới thiệu (youtube)</label>
-                    <input type="text" class="form-control" id="about_video" name="about_video" value="{{ old('about_video')?? $config['about_video']->value }}">
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-semibold">Tiêu đề trang tư vấn </label>
-                    <input type="text" class="form-control" id="contact_title" name="contact_title" value="{{ old('contact_title')?? $config['contact_title']->value }}">
-                </div>
-                <div class="form-group">
                     <label class="font-weight-semibold">Facebook </label>
                     <input type="text" class="form-control" id="facebook" name="facebook" value="{{ old('facebook')?? $config['facebook']->value }}">
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-semibold">Instagram </label>
-                    <input type="text" class="form-control" id="instagram" name="instagram" value="{{ old('instagram')?? $config['instagram']->value }}">
-                </div>
-                <div class="form-group">
-                    <label class="font-weight-semibold">Youtube </label>
-                    <input type="text" class="form-control" id="youtube" name="youtube" value="{{ old('youtube')?? $config['youtube']->value }}">
                 </div>
                 <div class="text-right">
                     <button type="submit" class="btn btn-primary">Lưu <i class="icon-paperplane ml-2"></i></button>

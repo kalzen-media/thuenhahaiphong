@@ -20,7 +20,10 @@
                             <label id="title-error" class="validation-invalid-label" for="title">{{$message}}</label>
                             @enderror
                         </div>
-
+                        <div class="form-group">
+                            <label class="font-weight-semibold">Mã BĐS</label>
+                            <input type="text" class="form-control maxlength" maxlength="255" required id="code" name="code" value="{{ old('code') ?: ($record->code ?? '') }}">
+                        </div>
                         <div class="form-group">
                             <label class="font-weight-semibold">Mô tả</label>
                             <textarea class="form-control maxlength" maxlength="1500" name="description">{{ old('description') ?: ($record->description ?? '') }}</textarea>

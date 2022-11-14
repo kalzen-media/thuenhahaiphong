@@ -31,7 +31,7 @@
     <meta name="author" content="kalzen">
 
     <!-- Favicon -->
-    <title>SOWA</title>
+    <title>Starland</title>
 
     <!-- vendor css -->
     <link href="{{asset('lib/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet">

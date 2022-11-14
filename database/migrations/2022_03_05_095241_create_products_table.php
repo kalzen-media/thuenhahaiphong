@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             $table->text('description')->nullable()->default(null);
             $table->longtext('content')->nullable()->default(null);
             $table->text('price')->nullable()->default(null);
-            $table->string('dtsd')->nullable()->default(null);
-            $table->string('dtmb')->nullable()->default(null);
+            $table->text('code')->nullable()->default(null);
+            $table->text('googlemaps')->nullable();
             $table->unsignedBigInteger('viewed')->nullable()->default(null);
             $table->unsignedInteger('user_id')->nullable()->default(null);
             $table->unsignedInteger('status')->nullable()->default(Product::STATUS_ACTIVE);
